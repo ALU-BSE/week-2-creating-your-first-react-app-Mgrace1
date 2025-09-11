@@ -1,264 +1,108 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+My First React App 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project was created as part of the Guided Learning Activity: Creating Your First React App with TypeScript and Vite.
+The goal is to build a simple React application that displays a heading and a paragraph using a custom component styled with CSS.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_ixf7gdX)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=20396953)
-# react-dev-week-2-react-app
-
-### Guided Learning Activity: Creating Your First React App with TypeScript and Vite
-
-**Goal:** Build a simple React app that displays a heading and a paragraph of text using a custom component, styled with CSS.
-
-**Prerequisites:**
-
-  * **Node.js and npm:** Ensure you have Node.js (version 16 or later recommended) and npm installed. You can verify this by running `node -v` and `npm -v` in your terminal.
-  * **Code Editor:** A code editor like VS Code, Atom, or Sublime Text is recommended.
-  * **Basic Terminal/Command Line Knowledge:** Familiarity with navigating your file system and running commands in the terminal.
-  * **Basic understanding of HTML, CSS, and Javascript:** You will learn concepts as you go, but basic understanding is helpful.
-
-**Steps:**
-
-**Step 1: Set up the Project with Vite**
-
-1.  **Open your terminal/command prompt.**
-
-2.  **Create the project:**
-
-    ```bash
-    npm create vite@latest my-first-react-app -- --template react-ts
-    ```
-
-      * `npm create vite@latest`: This command uses npm to run the latest version of Vite's project initializer.
-      * `my-first-react-app`: This is the name of your project. You can choose any name you like.
-      * `-- --template react-ts`: This tells Vite to use the React template with TypeScript support.
+ Project Setup
+Prerequisites
 
-3.  **Navigate to the project directory:**
+Node.js
+ (v16 or later recommended)
 
-    ```bash
-    cd my-first-react-app
-    ```
+npm (comes with Node.js)
 
-4.  **Install dependencies:**
+A code editor such as VS Code
 
-    ```bash
-    npm install
-    ```
+Steps to Run the Project
 
-    This command installs all the necessary packages (React, ReactDOM, etc.) that are listed in the `package.json` file.
+Clone the repository
 
-5.  **Start the development server:**
+git clone https://github.com/your-username/my-first-react-app.git
+cd my-first-react-app
 
-    ```bash
-    npm run dev
-    ```
 
-    This command starts the Vite development server. You should see a message in the terminal indicating the server is running, usually on `http://localhost:5173/`.
+Install dependencies
 
-6.  **Open your web browser and visit** `http://localhost:5173/`. You should see the default Vite + React starter page.
+npm install
 
-**Step 2: Understand the Project Structure**
 
-Let's take a quick look at the important files and folders generated by Vite:
+Run the development server
 
-  * **`index.html`:** The main HTML file where your React app will be injected.
-  * **`src/`:** The directory where you'll write your React application code.
-      * **`main.tsx`:** The entry point of your React application. It renders the root component (`App`) into the HTML.
-      * **`App.tsx`:** The main component of your application. We will be creating a new component soon.
-      * **`App.css`:** CSS styles specifically for the `App` component.
-      * **`vite-env.d.ts`:** This file ensures TypeScript understands Vite's environment variables.
-  * **`package.json`:** Lists your project's dependencies and scripts.
-  * **`tsconfig.json`:** Configuration file for the TypeScript compiler.
-  * **`vite.config.ts`:** Configuration file for Vite.
+npm run dev
 
-**Step 3: Create Your First Component**
 
-1.  **Create a new file:** Inside the `src` directory, create a new file named `MyComponent.tsx`.
+Open your browser and go to:
+ http://localhost:5173/
 
-2.  **Add the component code:**
+ Project Structure
+my-first-react-app/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── src/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── main.tsx
+│   ├── index.css
+│   ├── MyComponent.tsx
+│   ├── MyComponent.css
+│   └── vite-env.d.ts
 
-    ```typescript
-    import React from 'react';
+🖼 Features
 
-    const MyComponent: React.FC = () => {
-      return (
-        <div>
-          <h1>Hello from MyComponent!</h1>
-          <p>This is a paragraph of text within my component.</p>
-        </div>
-      );
-    };
+ Built with React + TypeScript + Vite
 
-    export default MyComponent;
-    ```
+ Custom component (MyComponent)
 
-      * `import React from 'react'`: Imports the necessary React library.
-      * `const MyComponent: React.FC = () => { ... }`: Defines a functional component named `MyComponent`. `React.FC` specifies that it's a functional component type.
-      * `return ( ... )`: The JSX code that defines what this component renders. JSX is an extension to JavaScript that lets you write HTML-like code within your JavaScript/TypeScript files.
-      * `export default MyComponent`: Makes the component available for use in other parts of your application.
+ Styled with CSS (MyComponent.css and App.css)
 
-**Step 4: Use Your Component in `App.tsx`**
+ Fast Hot Module Replacement (HMR)
 
-1.  **Open `src/App.tsx`**.
-2.  **Modify the content:** Remove the current content of `App.tsx` and replace it with the following code:
-    ```typescript
-    import React from 'react';
-    import MyComponent from './MyComponent';
-    import './App.css';
+ Component Example
 
-    function App() {
-      return (
-        <div className="App">
-          <MyComponent />
-        </div>
-      );
-    }
+MyComponent.tsx
 
-    export default App;
-    ```
-      * `import MyComponent from './MyComponent'`: Imports your newly created component.
-      * `<MyComponent />`: Uses the `MyComponent` within the `App` component's JSX.
+import React from 'react';
+import './MyComponent.css';
 
-**Step 5: Style Your Component**
+const MyComponent: React.FC = () => {
+  return (
+    <div className="my-component">
+      <h1>Hello from MyComponent!</h1>
+      <p>This is a paragraph of text within my component.</p>
+    </div>
+  );
+};
 
-1.  **Create a CSS file for your component:** Inside the `src` directory, create a new file named `MyComponent.css`.
+export default MyComponent;
 
-2.  **Add CSS styles:**
+ Styling Example
 
-    ```css
-    .my-component {
-      background-color: lightblue;
-      padding: 20px;
-      border: 1px solid blue;
-      border-radius: 5px;
-      text-align: center;
-    }
+MyComponent.css
 
-    .my-component h1 {
-      color: navy;
-    }
+.my-component {
+  background-color: lightblue;
+  padding: 20px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  text-align: center;
+}
 
-    .my-component p {
-      font-size: 16px;
-    }
-    ```
+.my-component h1 {
+  color: navy;
+}
 
-3.  **Import the CSS file in `MyComponent.tsx`:**
+.my-component p {
+  font-size: 16px;
+}
 
-    ```typescript
-    import React from 'react';
-    import './MyComponent.css'; // Import the CSS file
 
-    const MyComponent: React.FC = () => {
-      return (
-        <div className="my-component">
-          <h1>Hello from MyComponent!</h1>
-          <p>This is a paragraph of text within my component.</p>
-        </div>
-      );
-    };
 
-    export default MyComponent;
-    ```
+ Resources
 
-      * `import './MyComponent.css'` is added to import the CSS file.
-      * `className="my-component"` is added to the `div` element so that the styles are applied.
+Vite Documentation
 
-4.  **Optional: Style the `App` component:** You can also add some styles to the `App` component in `App.css` (e.g., to center the content):
+React Documentation
 
-    ```css
-    .App {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    ```
-
-**Step 6: Run and View**
-
-1.  If your development server stopped, run `npm run dev` again in the terminal.
-2.  Refresh (or open) `http://localhost:5173/` in your browser.
-
-You should now see your styled component with the heading and paragraph displayed. You can add your own changes to the code and the browser will automatically refresh and display the changes.
-
-**Congratulations\!** You have created your first React app with TypeScript and Vite, created a custom component, displayed content, and applied basic styling.
-
-**Further Exploration:**
-
-  * **Props:** Learn how to pass data into components using props.
-  * **State:** Explore how to manage dynamic data within your components using state.
-  * **More Complex Styling:** Look into styled-components or other CSS-in-JS solutions for more advanced styling techniques.
-  * **Vite Documentation:** Dive deeper into Vite's features and configuration: [https://vitejs.dev/](https://www.google.com/url?sa=E&source=gmail&q=https://vitejs.dev/)
-  * **React Documentation:** The official React documentation is an excellent resource: [https://react.dev/](https://www.google.com/url?sa=E&source=gmail&q=https://react.dev/)
-  * **TypeScript Documentation:** Learn more about TypeScript and its features: [https://www.typescriptlang.org/](https://www.google.com/url?sa=E&source=gmail&q=https://www.typescriptlang.org/)
-
-Happy coding\!
->>>>>>> d9148d824298cb124338b47d2b37c096a5082064
+TypeScript Documentation
