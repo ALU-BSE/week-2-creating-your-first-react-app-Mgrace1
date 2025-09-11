@@ -49,7 +49,7 @@ my-first-react-app/
 │   ├── MyComponent.css
 │   └── vite-env.d.ts
 
-🖼 Features
+ Features
 
  Built with React + TypeScript + Vite
 
